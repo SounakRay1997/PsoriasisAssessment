@@ -13,3 +13,7 @@ A GUI developed in PyQt4 environment for computer aided analysis of Psoriatic Ca
 * sklearn==0.19.1
 * skimage==0.12.2
 * cv2==3.4.1
+
+## How to install dependencies
+
+* keras - sudo pip install keras==2.1.6
