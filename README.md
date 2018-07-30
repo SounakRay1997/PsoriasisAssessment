@@ -1,6 +1,6 @@
 # PsoriasisAssessment
 
-A GUI developed in PyQt4 environment for computer aided analysis of Psoriatic Camera Images, Psoriatic Histopathology Images and to detect the presence of Munro's microabscess. The trained models are included in the original folder and the dependencies needed to be installed are mentioned here.
+A GUI developed in PyQt4 environment for computer aided analysis of Psoriatic Camera Images, Psoriatic Histopathology Images and to detect the presence of Munro's microabscess. The trained models are included in the original folder and the dependencies needed to be installed are mentioned here. The main program is contained in the PsoriasisAssessment.py file. You need to execute that to perform the assessment of diseased images.
 
 ## Dependencies
 
