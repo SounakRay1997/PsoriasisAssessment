@@ -17,3 +17,12 @@ A GUI developed in PyQt4 environment for computer aided analysis of Psoriatic Ca
 ## How to install dependencies
 
 * keras - sudo pip install keras==2.1.6
+* tensorflow - sudo pip install tensorflow==1.8.0
+* numpy - sudo pip install numpy==1.14.5
+* PyQt4 - sudo apt-get install python-qt4
+* matplotlib - sudo pip install matplotlib==2.2.2
+* scipy - sudo pip install scipy==1.1.0
+* sklearn - sudo pip install scikit-learn==0.19.1
+* skimage - sudo pip install scikit-image==0.12.2
+* cv2 - sudo apt-get install python-opencv
+
