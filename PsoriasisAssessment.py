@@ -492,8 +492,6 @@ class correctionWindow2(QtGui.QMainWindow):
             if x_1<0:
                 x_1=0
             un, counts=np.unique(DisMask, return_counts=True)
-            print(un)
-            print(counts)
             DisMask[y_1:y_2, x_1:x_2]=0
             
              
@@ -509,8 +507,6 @@ class correctionWindow2(QtGui.QMainWindow):
         _, DisMask=cv2.threshold(DisMask, 127, 255, 0)
         DisMask=np.uint8(DisMask)	
         un, counts=np.unique(DisMask, return_counts=True)
-        print(un)
-        print(counts)
         im21, contours1, hierarchy1 = cv2.findContours(DisMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         img=cv2.drawContours(img, contours1, -1, (0,255,0), 2)
         im=Image.fromarray(img)
