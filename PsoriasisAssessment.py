@@ -246,19 +246,10 @@ class correctionWindow(QtGui.QMainWindow):
         global SW
         global filename
         global currentPath
-        img1=cv2.imread(str(filename))
-        img1=cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
-        img2=cv2.imread(str(filename))
-        img2=cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
-        img3=cv2.imread(str(filename))
-        img3=cv2.cvtColor(img3, cv2.COLOR_BGR2RGB)
-        img11=img1
-        img22=img2
-        img33=img3
+        img=cv2.cvtColor(cv2.imread(str(filename)), cv2.COLOR_BGR2RGB)
+        img11=img22=img33=img1
         global d
-        d1=d
-        d2=d
-        d3=d
+        d1=d2=d3=d
         [row1,col1]=np.where(d1==2)
         epiMask=np.zeros(d.shape)
         epiMask[row1,col1]=1
