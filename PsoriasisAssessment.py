@@ -1,8 +1,8 @@
 """
    This file contains the whole functionality of the Graphical User Interface. We use classes to define various windows views of the Graphical User Interface 
-   but the classes are placed under the same file. All the classes inherit from the QtGui.QMainWindow of PyQt because they denote the same type of window.
-   We use various ML libraries as well to perform the AI related capabilities of the Graphical User Interface. If anyone has any suggestions to improve the 
-   code, I am always looking for suggestions, please contact me at sounakray1997@gmail.com
+   but the classes are placed under the same file. All the classes inherit from various modules of the QtGui class of PyQt. We use various ML libraries as well 
+   to perform the AI related capabilities of the Graphical User Interface. If anyone has any suggestions to improve the  code, I am always looking for suggestions, 
+   please contact me at sounakray1997@gmail.com
 """
 
 import os
@@ -58,6 +58,9 @@ croppedFname = ""
 currentPath = os.getcwd()
 currentPath = currentPath + "/"
 
+'''
+   This class creates the Correction Window in the GUI for the mistakes in the histopathology image segmentation.
+'''
 
 class correctionWindow(QtGui.QMainWindow):
     def __init__(self):
@@ -317,6 +320,9 @@ class correctionWindow(QtGui.QMainWindow):
             _translate("MainWindow", "Apply changes", None)
         )
 
+'''
+   This class creates the viewing window which is used to view the results of the diseased region segmentation of images taken from a digital camera
+'''
 
 class DiseasedWindow(QtGui.QMainWindow):
     def __init__(self):
@@ -377,6 +383,9 @@ class DiseasedWindow(QtGui.QMainWindow):
             _translate("MainWindow", "Save current image", None)
         )
 
+'''
+   This class creates the second Correction Window in the GUI for the mistakes in the diseased region image segmentation. The algorithm in this case runs on images taken from a digital camera
+'''
 
 class correctionWindow2(QtGui.QMainWindow):
     def __init__(self):
@@ -536,6 +545,10 @@ class correctionWindow2(QtGui.QMainWindow):
             _translate("MainWindow", "Apply changes", None)
         )
 
+'''
+   This class is used to create the window which displays the uniformity report of the epidermis (minimum and maximum thickness) in the histopathology image 
+   along with the number of trapped dermis regions inside the epidermis.
+'''
 
 class UniformityReport(QtGui.QMainWindow):
     def __init__(self, max_len, min_len, notrap):
@@ -568,6 +581,9 @@ class UniformityReport(QtGui.QMainWindow):
     def retranslateUi(self):
         self.setWindowTitle(_translate("MainWindow", "Histopathology Report", None))
 
+'''
+   This class creates the window which displays the uniformity of the Stratum Corneum (minimum and maximum thickness) in the histopathology images.
+'''
 
 class UniformitySCReport(QtGui.QMainWindow):
     def __init__(self, max_len, min_len):
@@ -601,6 +617,9 @@ class UniformitySCReport(QtGui.QMainWindow):
             _translate("MainWindow", "Stratum Corneum Uniformity Report", None)
         )
 
+'''
+   This class generates the window which asks the user to enter the various options in the dialog box required to compute the Munro's Microabscess
+'''
 
 class munroMicroabscessDialog(QtGui.QDialog):
     def __init__(self, regions):
@@ -727,6 +746,9 @@ class munroMicroabscessDialog(QtGui.QDialog):
             _translate("Dialog", "Get thickness details of Stratum Corneum", None)
         )
 
+'''
+   This class creates the window for displaying the results of the histopathology image segmentation.
+'''
 
 class SegmentationWindow(QtGui.QTabWidget):
     def __init__(self):
@@ -919,6 +941,10 @@ class SegmentationWindow(QtGui.QTabWidget):
         self.pushButton_8.setText(_translate("TabWidget", "Do corrections", None))
         self.pushButton_9.setText(_translate("TabWidget", "Do corrections", None))
 
+'''
+   This class creates the window for displaying the dialog box for entering the options like model path and which scores to output for the severity classificiation
+   of the image.
+'''
 
 class Classification(QtGui.QDialog):
     def __init__(self):
@@ -1017,6 +1043,9 @@ class Classification(QtGui.QDialog):
         self.label_2.setText(_translate("Dialog", " Choose Model :", None))
         self.label_3.setText(_translate("Dialog", "Choose Model :", None))
 
+'''
+   This class creates the home window of the application which is displayed when a user opens the application.
+'''
 
 class MyView(QtGui.QGraphicsView):
     rectChanged = pyqtSignal(QtCore.QRect)
@@ -1167,6 +1196,9 @@ class MyView(QtGui.QGraphicsView):
             None
         QtGui.QGraphicsView.mouseDoubleClickEvent(self, event)
 
+'''
+   This class displays various image information of the image opened by the user like height of the image, width of the image and color depth of the image.
+'''
 
 class ThirdWindow(QtGui.QMainWindow):
     def __init__(self, h, w, bpp):
@@ -1180,6 +1212,9 @@ class ThirdWindow(QtGui.QMainWindow):
         lbl2 = QtGui.QLabel("Color Depth : " + bpp + " channels", self)
         lbl2.setGeometry(10, 80, 350, 30)
 
+'''
+  This class ReportWindow displays the report of the Severity Assessment done on digital images taken using a camera 
+'''
 
 class ReportWindow(QtGui.QMainWindow):
     def __init__(self, e, s, i):
@@ -1260,6 +1295,9 @@ class ReportWindow(QtGui.QMainWindow):
             )
             self.lbl2.setGeometry(10, 120, 400, 30)
 
+'''
+   This window is used to accept the advanced options for performing image processing like, blurring, gamma correction etc. on the image.
+'''
 
 class AdvancedOptions(QtGui.QDialog):
     def __init__(self):
@@ -1466,6 +1504,9 @@ class AdvancedOptions(QtGui.QDialog):
         self.checkBox_16.setText(_translate("Dialog", "Median filter :", None))
         self.label_6.setText(_translate("Dialog", "(3-9)", None))
 
+'''
+   This window accepts threshold value for thresholding
+'''
 
 class ThresholdDialog(QtGui.QDialog):
     def __init__(self):
@@ -1579,6 +1620,9 @@ class AdapThreshold(QtGui.QDialog):
         self.label.setText(_translate("Dialog", "Block Size :", None))
         self.label_2.setText(_translate("Dialog", "( 5 - 20 )", None))
 
+'''
+   This class creates the window used to open images and save images through the GUI
+'''
 
 class Ui_Dialog(QtGui.QDialog):
     def __init__(self):
@@ -1886,6 +1930,9 @@ class Ui_Dialog(QtGui.QDialog):
         self.pushButton_4.setText(_translate("Dialog", "Add Files", None))
         self.pushButton_5.setText(_translate("Dialog", "Clear", None))
 
+'''
+This class creates the main window of the GUI
+'''
 
 class Window(QtGui.QMainWindow):
     def __init__(self):
