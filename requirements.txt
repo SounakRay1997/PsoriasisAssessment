@@ -1,6 +1,6 @@
 keras==2.1.6
 tensorflow
-numpy==1.14.5
+numpy==1.22.0
 PyQt4==4.11.4
 matplotlib==2.2.2
 scipy==1.1.0
